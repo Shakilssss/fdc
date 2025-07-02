@@ -19,3 +19,4 @@ Route::resource('departments', 'DepartmentController');
 
 Route::resource('leaveTypes', 'LeaveTypeController');
 
+Route::resource('producers', 'ProducerController');
