@@ -58,38 +58,24 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/forward-to-dept-head/{id}', 'LeaveController@forwardToDeptHead')->name('forward.to.dept.head');
     Route::get('/forward-to-md/{id}', 'LeaveController@forwardToMd')->name('forward.to.md');
-    Route::get('/forward-to-dept-finance/{id}', 'LeaveController@forwardToDeptFinance')->name('forward.to.dept.finance');
-    Route::get('/dashboard-data', [HomeController::class, 'getDashboardData'])->name('dashboard.data');
+    Route::get('/forward-to-director-finance/{id}', 'LeaveController@forwardToDirectorFinance')->name('forward.to.director.finance');
+    Route::get('/leave-approved/{id}', 'LeaveController@leaveApproved')->name('leaves.approved');
+    Route::get('/leave-rejected/{id}', 'LeaveController@leaveRejected')->name('leaves.rejected');
 
+    Route::get('/dashboard-data', [HomeController::class, 'getDashboardData'])->name('dashboard.data');
 });
 Route::get('empty_table', 'JoshController@emptyTable');
 Route::get('remove_all_files', 'JoshController@remove_all_files');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('{name?}', 'JoshController@showView');
-
-
-
-
-
 Route::post('/producers_register', [ProducerController::class, 'producers_register'])->name('producers_register');
-
-
-
 Route::post('/producers_login', [ProducerController::class, 'producers_login'])->name('producers_login');
-
-
 Route::group(["middleware" => []], function () {
     Route::prefix('producer')->controller(ProducerController::class)
         ->group(function () {
         Route::get('/dashboard', 'dashboard');
     });
 });
-
-
-
-
-
-
 
 
 Route::get('/upload_exell', function () {
