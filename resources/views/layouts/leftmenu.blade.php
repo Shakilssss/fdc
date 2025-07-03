@@ -34,13 +34,22 @@
         <ul class="sub-nav collapse {!! Request::is('leaves*')  ? 'show' : '' !!}" id="hr" data-bs-parent="#sidebar-menu">
             @if (can('leaves'))
                 <li class="nav-item">
-                    <a class="nav-link {!! Request::is('leaves*') ? 'active' : '' !!}" href="{{ route('leaves.index') }}">
+                    <a class="nav-link {!! (Request::is('leaves') || Request::is('leaves/index')) ? 'active' : '' !!}" href="{{ route('leaves.index') }}">
                         <i class="icon im im-icon-Settings-Window"></i>
                         <i class="sidenav-mini-icon"> ছু </i>
                         <span class="item-name">ছুটি</span>
                     </a>
                 </li>
             @endif
+            @if (can('leave_apply_list'))
+            <li class="nav-item">
+                <a class="nav-link {!! Request::is('leave-apply-list') ? 'active' : '' !!}" href="{{ route('leaves.apply.leave.list') }}">
+                    <i class="icon im im-icon-Settings-Window"></i>
+                    <i class="sidenav-mini-icon"> ছু আ তা</i>
+                    <span class="item-name">ছুটি আবেদন তালিকা</span>
+                </a>
+            </li>
+        @endif
         </ul>
     </li>
 @endif

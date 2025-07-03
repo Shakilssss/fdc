@@ -7,18 +7,18 @@ Leaves @parent
 
 @section('content')
 <!-- Content Header (Page header) -->
-<section class="content-header">
-    {{--<div aria-label="breadcrumb" class="card-breadcrumb">
-        <h1>Leaves</h1>
-    </div>
-    <div class="separator-breadcrumb border-top"></div>--}}
-</section>
+
 
 <!-- Main content -->
 <div class="content">
     <div class="clearfix"></div>
 
     @include('flash::message')
+    <script>
+        setTimeout(function() {
+            $('.alert').fadeOut('slow');
+        }, 3000);
+    </script>
 
     <div class="clearfix"></div>
     <div class="card" width="88vw;">

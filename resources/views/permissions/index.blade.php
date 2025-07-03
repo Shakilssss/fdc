@@ -19,7 +19,11 @@ Permissions @parent
     <div class="clearfix"></div>
 
     @include('flash::message')
-
+    <script>
+        setTimeout(function() {
+            $('.alert').fadeOut('slow');
+        }, 3000);
+    </script>
     <div class="clearfix"></div>
     <div class="card" width="88vw;">
         <section class="card-header">
@@ -33,7 +37,7 @@ Permissions @parent
         </div>
     </div>
     <div class="text-center">
-        
+
         @include('adminlte-templates::common.paginate', ['records' => $permissions])
 
     </div>

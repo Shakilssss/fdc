@@ -20,6 +20,11 @@ Designations @parent
     <div class="clearfix"></div>
 
     @include('flash::message')
+    <script>
+        setTimeout(function() {
+            $('.alert').fadeOut('slow');
+        }, 3000);
+    </script>
 
     <div class="clearfix"></div>
     <div class="card" width="88vw;">

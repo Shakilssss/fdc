@@ -20,7 +20,7 @@ Profile @parent
 <script>
     setTimeout(function() {
         $('.alert').fadeOut('slow');
-    }, 2000);
+    }, 3000);
 </script>
 
 <section class="content">
